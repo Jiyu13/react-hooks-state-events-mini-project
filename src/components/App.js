@@ -12,6 +12,7 @@ function App() {
   const [tasks, setTasks] = useState(TASKS)
 
   const [selectedCategory, setSelectedCategory] = useState("All")
+  const [isSelected, setIsSeleted] = useState(true)
   
   const tasksToDisplay = tasks.filter(task => {
     if (selectedCategory === "All") {
@@ -22,6 +23,7 @@ function App() {
   })
 
   function handleFilter(event) {
+    console.log(event.target.id)
     setSelectedCategory(event.target.id)
   }
 
@@ -34,6 +36,7 @@ function App() {
     <div className="App">
       <h2>My tasks</h2>
       <CategoryFilter categories={CATEGORIES} 
+                      selectedCategory={selectedCategory}
                       onCategoryChange={handleFilter} 
       />
       <NewTaskForm categories={CATEGORIES} onTaskFormSubmit={handleAddTask}/>
