@@ -14,7 +14,6 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("All")
   
   function handleFilter(event) {
-    // console.log(event.target)
     setSelectedCategory(event.target.id)
   }
 
@@ -32,7 +31,7 @@ function App() {
       <CategoryFilter categories={CATEGORIES} 
                       onCategoryChange={handleFilter} 
       />
-      <NewTaskForm />
+      <NewTaskForm categories={CATEGORIES}/>
       <TaskList tasks={tasksToDisplay} setTasks={setTasks}/>
     </div>
   );
