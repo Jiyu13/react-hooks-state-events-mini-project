@@ -14,6 +14,9 @@ function NewTaskForm({ categories }) {
         Category
         <select name="category">
           {/* render <option> elements for each category here */}
+          {newCategories.map(category => {
+            return <option value={category} key={category}>{category}</option>
+          })}
         </select>
       </label>
       <input type="submit" value="Add task" />
