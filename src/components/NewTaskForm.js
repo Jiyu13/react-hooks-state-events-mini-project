@@ -5,18 +5,18 @@ function NewTaskForm({ categories }) {
 
   const [formData, setFormData] = useState({
     text:"",
-    categories: "Code"
+    category: "Code"
   })
 
   return (
     <form className="new-task-form">
       <label>
         Details
-        <input type="text" name="text" />
+        <input type="text" name="text" value={formData.name} onChange={handleInput}/>
       </label>
       <label>
         Category
-        <select name="category">
+        <select name="category" value={formData.category} onChange={handleInput}>
           {/* render <option> elements for each category here */}
 
           {newCategories.map(category => {
