@@ -12,7 +12,6 @@ function App() {
   const [tasks, setTasks] = useState(TASKS)
 
   const [selectedCategory, setSelectedCategory] = useState("All")
-  const [isSelected, setIsSeleted] = useState(true)
   
   const tasksToDisplay = tasks.filter(task => {
     if (selectedCategory === "All") {
