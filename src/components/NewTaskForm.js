@@ -1,6 +1,9 @@
 import React from "react";
 
-function NewTaskForm() {
+function NewTaskForm({ categories }) {
+
+  const newCategories = categories.filter(category => category !== "All")
+
   return (
     <form className="new-task-form">
       <label>
