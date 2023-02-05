@@ -5,9 +5,15 @@ function NewTaskForm({ categories }) {
 
   const [formData, setFormData] = useState({
     text:"",
-    category: "Code"
+    category: ""
   })
 
+  function handleInput(event) {
+    const value = event.target.value // user input value
+    const name = event.target.name   // input name attritube
+    setFormData({...formData, [name]: value})
+  }
+  console.log(formData)
   return (
     <form className="new-task-form">
       <label>
