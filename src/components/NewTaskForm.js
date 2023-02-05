@@ -12,7 +12,7 @@ function NewTaskForm({ categories }) {
     <form className="new-task-form">
       <label>
         Details
-        <input type="text" name="text" value={formData.name} onChange={handleInput}/>
+        <input type="text" name="text" value={formData.text} onChange={handleInput}/>
       </label>
       <label>
         Category
