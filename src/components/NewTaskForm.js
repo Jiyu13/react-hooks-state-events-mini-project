@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function NewTaskForm({ categories }) {
+function NewTaskForm({ categories, onTaskFormSubmit }) {
   const newCategories = categories.filter(category => category !== "All")
 
   const [formData, setFormData] = useState({
@@ -13,9 +13,18 @@ function NewTaskForm({ categories }) {
     const name = event.target.name   // input name attritube
     setFormData({...formData, [name]: value})
   }
-  console.log(formData)
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    const newTask ={
+      text: formData.text,
+      category: formData.category
+    }
+    onTaskFormSubmit(newTask)
+  }
+
   return (
-    <form className="new-task-form">
+    <form className="new-task-form" onSubmit={handleSubmit}>
       <label>
         Details
         <input type="text" name="text" value={formData.text} onChange={handleInput}/>
