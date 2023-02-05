@@ -20,7 +20,6 @@ function TaskList({tasks, setTasks}) {
       {/* map each task, return a Task component with */}
       {tasks.map(task => {
         return <Task key={task.text} text={task.text} category={task.category} onDeleteChange={handleDeleteItem}/>
-        console.log(task)
         
       })}
 
