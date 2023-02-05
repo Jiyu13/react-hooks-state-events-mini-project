@@ -6,7 +6,7 @@ function CategoryFilter( {categories} ) {
       <h5>Category filters</h5>
 
       {/* render <button> elements for each category here */}
-      {categories.map((category, index) => (<button key={index} id={category}>{category}</button>))}
+      {categories.map((category, index) => (<button key={category} id={category}>{category}</button>))}
 
     </div>
   );
